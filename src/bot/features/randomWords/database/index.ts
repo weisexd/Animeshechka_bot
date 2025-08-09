@@ -1,4 +1,6 @@
 import { WordsDatabase } from "./wordsDatabase";
 
 const wordsDatabase = new WordsDatabase();
-export default wordsDatabase.init();
+wordsDatabase.init();
+
+export default await wordsDatabase;

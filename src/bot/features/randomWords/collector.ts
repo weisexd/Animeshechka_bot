@@ -11,7 +11,7 @@ const collectRandomMessages = async (chatId: string, message: string): Promise<v
     const words = message
         .split(' ')
         .map(w => w.trim())
-        .filter(part => part !== '' && isNaN(Number(part)));
+        .filter(word => word.length > 1 && isNaN(Number(word)) === false);
 
     if (words.length === 0) return;
 
