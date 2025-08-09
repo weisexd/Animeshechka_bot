@@ -2,7 +2,7 @@ import db from './database/index';
 import shouldProcess from '../../../utils/randomShould';
 import shuffle from '../../../utils/shuffle';
 
-const SAVE_CHANCE = 20;
+const SAVE_CHANCE = 100;
 const MAX_WORDS = 2;
 
 const collectRandomMessages = async (chatId: string, message: string): Promise<void> => {
@@ -11,7 +11,8 @@ const collectRandomMessages = async (chatId: string, message: string): Promise<v
     const words = message
         .split(' ')
         .map(w => w.trim())
-        .filter(word => word.length > 1 && isNaN(Number(word)) === false);
+        .filter(word => word.length > 1 && isNaN(Number(word)) === true);
+
 
     if (words.length === 0) return;
 

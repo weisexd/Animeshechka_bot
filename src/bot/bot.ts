@@ -2,6 +2,7 @@ import { Telegraf } from "telegraf";
 import { config } from "dotenv";
 import initializeCommands from "./commands/index";
 import initializeMiddlewares from "./middlewares/index";
+import initializeHandlers from './handlers/index';
 
 config();
 
@@ -13,5 +14,6 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 
 initializeMiddlewares(bot);
 initializeCommands(bot);
+initializeHandlers(bot);
 
 export default bot;

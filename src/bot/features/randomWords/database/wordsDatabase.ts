@@ -5,7 +5,6 @@ import { DBData } from './types/database';
 import path from 'path';
 import shuffle from '../../../../utils/shuffle';
 
-
 export class WordsDatabase {
     private db!: Low<DBData>;
     private isInitialized: boolean = false;
@@ -16,7 +15,7 @@ export class WordsDatabase {
 
         const __filename = fileURLToPath(import.meta.url);
         const __dirname = path.dirname(__filename);
-        const file = path.join(__dirname, '../../../data/randomWordsDb.json');
+        const file = path.join(__dirname, '../../../../../data/randomWordsDb.json');
 
         this.db = await JSONFilePreset(file, { chats: {} })
         await this.db.read();
@@ -26,7 +25,9 @@ export class WordsDatabase {
     }
 
     async saveWords(chatId: string, words: string[]): Promise<void> {
+        console.log('xd');
         if (!this.isInitialized) await this.init();
+        console.log('Saving words in database');
 
         this.db.data.chats[chatId] ||= { words: [], wordsCount: 0 }
 
