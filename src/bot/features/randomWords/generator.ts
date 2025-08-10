@@ -1,7 +1,7 @@
 import db from './database/index'
 import shouldProcess from '../../../utils/randomShould';
 
-const RESPONSE_CHANCE = 100;
+const RESPONSE_CHANCE = 50;
 const MAX_WORDS = 8;
 
 const generateRandomMessage = async (chatId: string): Promise<string | null> => {
