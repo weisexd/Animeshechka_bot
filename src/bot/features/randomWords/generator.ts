@@ -1,12 +1,16 @@
 import db from './database/index'
 import shouldProcess from '../../../utils/randomShould';
+import settings from '../settings/index';
 
-const RESPONSE_CHANCE = 50;
+const CHANCE_PATH = 'randomWords.responseChance';
 const MAX_WORDS = 8;
 
 const generateRandomMessage = async (chatId: string): Promise<string | null> => {
     console.log('Generating message...');
-    if (!shouldProcess(RESPONSE_CHANCE)) return null;
+
+    const responseChance = await settings.getProperty(chatId, CHANCE_PATH);
+
+    if (!shouldProcess(responseChance)) return null;
 
     const randomAmount = Math.floor(Math.random() * MAX_WORDS) + 1;
 
