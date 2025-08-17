@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2023",                    // Версия JavaScript в которую компилируем
-    "module": "CommonJS",                  // Используем CommonJS для Node.js (НЕ ESNext!)
+    "module": "esnext",                  // Используем CommonJS для Node.js (НЕ ESNext!)
     "moduleResolution": "node",            // Разрешение модулей по правилам Node.js
     "outDir": "./dist",                    // Папка для скомпилированного JS
     "rootDir": "./src",                    // Корневая папка исходников
