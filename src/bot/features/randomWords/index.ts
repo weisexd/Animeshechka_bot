@@ -15,7 +15,7 @@ const handleRandomMessage = async (ctx: Context): Promise<void> => {
         await collectRandomMessages(chatId, message);
 
         const generatedMessage = await generateRandomMessage(chatId);
-        if (generatedMessage) await ctx.reply(generatedMessage);
+        if (generatedMessage) await ctx.reply(`- ${generatedMessage}`);
     } catch (error) {
         console.error('❌ Error in handling random message: ', error);
     }

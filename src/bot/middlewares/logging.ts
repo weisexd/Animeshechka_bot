@@ -1,4 +1,4 @@
-import { MiddlewareFunction } from '../types/middleware';
+import { MiddlewareFunction } from '../types/Middleware';
 
 const logging: MiddlewareFunction = (bot) => {
     bot.use((ctx, next) => {
