@@ -6,6 +6,7 @@ const download: BotCommand = (bot) => {
         try {
             // Validating input and extracting URL
             const args = ctx.message.text.split(' ').slice(1);
+            const desc = args.slice(1).join(' ');
             
             if (!args[0]) {
                 return ctx.reply('Укажите ссылку на видео')
@@ -25,7 +26,8 @@ const download: BotCommand = (bot) => {
 
             // Sending video to user
             ctx.replyWithVideo(url, {
-                reply_parameters: { message_id: ctx.message.message_id }
+                reply_parameters: { message_id: ctx.message.message_id },
+                caption: desc || undefined,
             });
         }
         catch (error) {
