@@ -2,7 +2,7 @@ import db from './database/index';
 import shouldProcess from '../../../utils/randomShould';
 import shuffle from '../../../utils/shuffle';
 
-const SAVE_CHANCE = 10;
+const SAVE_CHANCE = 50;
 const MAX_WORDS = 2;
 
 const collectRandomMessages = async (chatId: string, message: string): Promise<void> => {
