@@ -45,6 +45,8 @@ const getWeather = async (city: string): Promise<WeatherRes> => {
                 return { success: false, error: 'Превышено время ожидания'}
             }
         }
+
+        return { success: false, error: 'Unknown error'}
     }
 }
 
