@@ -2,12 +2,12 @@ import { Telegraf } from 'telegraf';
 import db from '../../settings/index';
 
 const TOGGLE_COMMANDS = {
-    'randomWords': { path: 'randomWords.enable', name: 'Случайные сообщения' },
-    'saveNumbers': { path: 'randomWords.saveNumbers', name: 'Сохранение чисел' }
+    'random_words': { path: 'randomWords.enable', name: 'Случайные сообщения' },
+    'save_numbers': { path: 'randomWords.saveNumbers', name: 'Сохранение чисел' }
 }
 
 const NUMBER_COMMANDS = {
-    'responseChance': { path: 'randomWords.responseChance', name: 'Шанс ответа',
+    'response_chance': { path: 'randomWords.responseChance', name: 'Шанс ответа',
         min: 1, max: 100 }
 }
 
