@@ -6,7 +6,7 @@ const CHANCE_PATH = 'randomWords.responseChance';
 const MAX_WORDS = 8;
 
 const generateRandomMessage = async (chatId: string): Promise<string | null> => {
-    console.log('Generating message...');
+    console.log(`[${chatId}] Generating message...`);
 
     const responseChance = await settings.getProperty(chatId, CHANCE_PATH);
 

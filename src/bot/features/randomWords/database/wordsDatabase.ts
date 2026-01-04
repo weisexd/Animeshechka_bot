@@ -25,9 +25,8 @@ export class WordsDatabase {
     }
 
     async saveWords(chatId: string, words: string[]): Promise<void> {
-        console.log('xd');
         if (!this.isInitialized) await this.init();
-        console.log('Saving words in database');
+        console.log(`[${chatId}] Saving words in database`);
 
         this.db.data.chats[chatId] ||= { words: [], wordsCount: 0 }
 
@@ -36,7 +35,7 @@ export class WordsDatabase {
 
         this.saveTimeout();
 
-        console.log(`💾 Saved ${words.length} words to chat  ${chatId}`);
+        console.log(`[${chatId}] 💾 Saved ${words.length} words`);
     }
 
     async getRandomWords(chatId: string, count: number): Promise<string[]> {
